@@ -171,7 +171,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1222355590029622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.45, y: 0, z: -11.32}
+  m_LocalPosition: {x: 13.9, y: 0, z: -0.88}
   m_LocalScale: {x: 2, y: 0.1, z: 2}
   m_Children:
   - {fileID: 4592778722422422}
@@ -186,7 +186,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1364174636928922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0.599}
+  m_LocalPosition: {x: 0, y: 1, z: 0.9}
   m_LocalScale: {x: 0.3, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 4053510903164086}
@@ -236,7 +236,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: f081d95237bb34b36933a8bb5ed08940, type: 2}
+  - {fileID: 2100000, guid: 4407685c1c537430ab095617bc416ff5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  standardSpeed: 5
+  standardSpeed: 6
   fullHealth: 100
 --- !u!136 &136397623797811504
 CapsuleCollider:
@@ -587,7 +587,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1567850281767708}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalPosition: {x: 0, y: 0, z: -28.1}
   m_LocalScale: {x: 4, y: 1, z: 1}
   m_Children:
   - {fileID: 224433068947103208}
