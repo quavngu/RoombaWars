@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class RoombaMovement : MonoBehaviour {
-	public float damage;
+	public float stabDamage;
+	public float swingRightDamage;
+	public float swingLeftDamage;
 	public float standardSpeed;
 	public float fullHealth;
 
@@ -72,7 +74,18 @@ public class RoombaMovement : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Wall")) {
 			MakeRotate ();
 		} else if (other.gameObject.CompareTag("Roomba")) {
-			other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.damage);
+			//He is rotating
+			if (rotation != 0 && !isBacking) {
+				if (rotation > 0) {
+					other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.swingRightDamage);
+				} else {
+					other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.swingLeftDamage);
+				}
+			}
+			//He is not rotating
+			else {
+				other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.stabDamage);
+			}
 		}
 	}
 
