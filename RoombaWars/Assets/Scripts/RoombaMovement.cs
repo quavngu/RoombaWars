@@ -91,7 +91,9 @@ public class RoombaMovement : MonoBehaviour {
 				other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.stabDamage);
 			}
 		}
-		MakeRotate ();
+		if (!other.gameObject.CompareTag("Fire")) {
+			MakeRotate ();
+		}
 	}
 
 	void MakeRotate() {
@@ -99,7 +101,7 @@ public class RoombaMovement : MonoBehaviour {
 		rotation = Random.Range (-100, 100);
 	}
 
-	void TakeDamage(float damage) {
+	public void TakeDamage(float damage) {
 		health -= damage;
 		slider.value = health;
 		if (health <= 0) {

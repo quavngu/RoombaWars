@@ -46,9 +46,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FireController.cs" />
+     <Compile Include="Assets\FireSpawnerController.cs" />
      <Compile Include="Assets\Scripts\Crowd.cs" />
      <Compile Include="Assets\Scripts\RoombaMovement.cs" />
      <Compile Include="Assets\Scripts\WeaponController.cs" />
+     <Compile Include="Assets\SpeedBoosterController.cs" />
      <None Include="Assets\Stone Age Weapons Pack\Readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
