@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3331760}
   - component: {fileID: 2331760}
   - component: {fileID: 65603300244403930}
+  - component: {fileID: 114650287446898276}
+  - component: {fileID: 114570247753984026}
   m_Layer: 0
   m_Name: Weapon_26
   m_TagString: Weapon
@@ -93,3 +95,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9636198, y: 1.6323075, z: 0.16658506}
   m_Center: {x: -0.14871646, y: 0.27119777, z: 0.000000014901133}
+--- !u!114 &114570247753984026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370fbca758f7e424e8a6dcc67f34ba0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabDamage: 0
+  swingRightDamage: 0
+  swingLeftDamage: 0
+  weight: 0
+--- !u!114 &114650287446898276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370fbca758f7e424e8a6dcc67f34ba0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabDamage: 0
+  swingRightDamage: 0
+  swingLeftDamage: 0
+  weight: 0

@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class RoombaMovement : MonoBehaviour {
-	public float stabDamage;
-	public float swingRightDamage;
-	public float swingLeftDamage;
+	private float stabDamage;
+	private float swingRightDamage;
+	private float swingLeftDamage;
 	public float standardSpeed;
 	public float fullHealth;
 
@@ -27,6 +27,11 @@ public class RoombaMovement : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 		canvas = GetComponentInChildren<Canvas> ();
 		slider = GetComponentInChildren<Slider> ();
+		var weapon = GetComponentInChildren<WeaponController> ();
+		stabDamage = weapon.stabDamage;
+		swingLeftDamage = weapon.swingLeftDamage;
+		swingRightDamage = weapon.swingRightDamage;
+		standardSpeed -= weapon.weight;
 		TakeDamage (0f);
 	}
 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3375506}
   - component: {fileID: 2375506}
   - component: {fileID: 65349182378514220}
+  - component: {fileID: 114754991193140002}
   m_Layer: 0
   m_Name: Weapon_9
   m_TagString: Weapon
@@ -94,3 +95,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.27373672, y: 6.7629123, z: 0.18151753}
   m_Center: {x: -0.00000011175871, y: -1.6486863, z: -0.0011612887}
+--- !u!114 &114754991193140002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370fbca758f7e424e8a6dcc67f34ba0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabDamage: 20
+  swingRightDamage: 2
+  swingLeftDamage: 2
+  weight: 2
