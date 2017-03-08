@@ -62,12 +62,13 @@ public class RoombaMovement : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision collision) {
+		
 		if (!collision.collider.CompareTag("Ground")) {
 			MakeRotate ();
 		}
 	}
 
-	IEnumerator back() {
+	IEnumerator Back() {
 		isBacking = true;
 		speed = -1f;
 		yield return new WaitForSeconds (0.6f);
@@ -76,9 +77,7 @@ public class RoombaMovement : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.CompareTag ("Wall")) {
-			MakeRotate ();
-		} else if (other.gameObject.CompareTag("Roomba")) {
+		if (other.gameObject.CompareTag ("Roomba")) {
 			//He is rotating
 			if (rotation != 0 && !isBacking) {
 				if (rotation > 0) {
@@ -92,13 +91,12 @@ public class RoombaMovement : MonoBehaviour {
 				other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.stabDamage);
 			}
 		}
+		MakeRotate ();
 	}
 
 	void MakeRotate() {
-		StartCoroutine (back ());
-		if (rotation == 0) {
-			rotation = Random.Range (-100, 100);
-		}
+		StartCoroutine(Back());
+		rotation = Random.Range (-100, 100);
 	}
 
 	void TakeDamage(float damage) {
