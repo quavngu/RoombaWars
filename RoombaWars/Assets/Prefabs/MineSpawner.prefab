@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9998ba8f989475798afb94bf03ebda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire: {fileID: 1213580298967742, guid: c8f66aba3ff16432e9bd5d421a244008, type: 2}
+  spawnObj: {fileID: 1213580298967742, guid: c8f66aba3ff16432e9bd5d421a244008, type: 2}
   coolDown: 1
-  fireLifeTime: 2
+  objLifeTime: 10
   yPos: -1

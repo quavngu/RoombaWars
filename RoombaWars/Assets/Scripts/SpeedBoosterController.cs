@@ -28,7 +28,6 @@ public class SpeedBoosterController : MonoBehaviour {
 	}
 
 	private IEnumerator BoostSpeed() {
-		print ("Boosting speed");
 		rm.standardSpeed += speedBoost;
 		yield return new WaitForSeconds (duration);
 		rm.standardSpeed -= speedBoost;
@@ -37,7 +36,6 @@ public class SpeedBoosterController : MonoBehaviour {
 	}
 
 	private IEnumerator CoolDown() {
-		print ("Cooling Down");
 		yield return new WaitForSeconds (coolDown);
 		isOnCoolDown = false;
 		isActive = false;

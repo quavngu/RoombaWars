@@ -94,7 +94,7 @@ public class RoombaMovement : MonoBehaviour {
 		if (other.gameObject.CompareTag("Mine")) {
 			Destroy(other.gameObject);
 		}
-		else if (!other.gameObject.CompareTag("Fire") && !other.gameObject.CompareTag("Explosion")) {
+		else if (!other.gameObject.CompareTag("Fire") && !other.gameObject.CompareTag("Explosion") && !other.gameObject.CompareTag("Oil")) {
 			MakeRotate ();
 		}
 	}

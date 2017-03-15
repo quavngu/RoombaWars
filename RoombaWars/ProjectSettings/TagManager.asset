@@ -11,6 +11,7 @@ TagManager:
   - Fire
   - Explosion
   - Mine
+  - Oil
   layers:
   - Default
   - TransparentFX
