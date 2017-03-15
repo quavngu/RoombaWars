@@ -23,11 +23,15 @@ public class OilController : MonoBehaviour {
 			other.gameObject.transform.Rotate (0f, 50f * rotateDeg * Time.deltaTime, 0f);
 		}
 		else if (other.gameObject.CompareTag ("Fire") || other.gameObject.CompareTag ("Explosion")) {
-			print ("boom");
-			GameObject obj = Instantiate (fire);
-			obj.transform.position = new Vector3 (this.transform.position.x, 0, this.transform.position.z);
-			Destroy (obj, 2);
-			Destroy (this.gameObject);
+			StartCoroutine (Ignite ());
 		}
+	}
+
+	IEnumerator Ignite() {
+		yield return new WaitForSeconds (0.1f);
+		GameObject obj = Instantiate (fire);
+		obj.transform.position = new Vector3 (this.transform.position.x, 0, this.transform.position.z);
+		Destroy (obj, 1);
+		Destroy (this.gameObject);
 	}
 }

@@ -49,10 +49,13 @@
      <Compile Include="Assets\Scripts\Crowd.cs" />
      <Compile Include="Assets\Scripts\ExplosionController.cs" />
      <Compile Include="Assets\Scripts\FireController.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\MainMenuController.cs" />
      <Compile Include="Assets\Scripts\MineController.cs" />
      <Compile Include="Assets\Scripts\ObjectSpawnerController.cs" />
      <Compile Include="Assets\Scripts\OilController.cs" />
      <Compile Include="Assets\Scripts\RoombaMovement.cs" />
+     <Compile Include="Assets\Scripts\Scenes.cs" />
      <Compile Include="Assets\Scripts\SpeedBoosterController.cs" />
      <Compile Include="Assets\Scripts\WeaponController.cs" />
      <Compile Include="Assets\TimeTraveler.cs" />
