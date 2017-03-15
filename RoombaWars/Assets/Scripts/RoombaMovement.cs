@@ -9,13 +9,13 @@ public class RoombaMovement : MonoBehaviour {
 	private float swingLeftDamage;
 	public float standardSpeed;
 	public float fullHealth;
+	public int rotation;
 
 	Rigidbody rb;
 	Canvas canvas;
 	Slider slider;
 
 	float health;
-	int rotation;
 	float speed;
 	bool isBacking;
 
@@ -91,7 +91,10 @@ public class RoombaMovement : MonoBehaviour {
 				other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.stabDamage);
 			}
 		}
-		if (!other.gameObject.CompareTag("Fire")) {
+		if (other.gameObject.CompareTag("Mine")) {
+			Destroy(other.gameObject);
+		}
+		else if (!other.gameObject.CompareTag("Fire") && !other.gameObject.CompareTag("Explosion")) {
 			MakeRotate ();
 		}
 	}

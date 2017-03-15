@@ -9,6 +9,8 @@ TagManager:
   - Wall
   - Roomba
   - Fire
+  - Explosion
+  - Mine
   layers:
   - Default
   - TransparentFX
