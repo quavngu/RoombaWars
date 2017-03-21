@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\MineController.cs" />
      <Compile Include="Assets\Scripts\ObjectSpawnerController.cs" />
      <Compile Include="Assets\Scripts\OilController.cs" />
+     <Compile Include="Assets\Scripts\PlayerCustomizationManager.cs" />
      <Compile Include="Assets\Scripts\RoombaMovement.cs" />
      <Compile Include="Assets\Scripts\Scenes.cs" />
      <Compile Include="Assets\Scripts\SpeedBoosterController.cs" />

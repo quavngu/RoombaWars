@@ -16,14 +16,14 @@ public class MainMenuController : MonoBehaviour {
 	public void ToMainSceneWith2Players() {
 		// How to use in next Scene
 		// int numPlayers = (int) Scenes.getParam("numberOfPlayers");
-		Scenes.Load ("Asgeir", "numberOfPlayers", "2");
+		Scenes.Load ("PlayerCustomization", "numberOfPlayers", "2");
 	}
 
 	public void ToMainSceneWith3Players() {
-		Scenes.Load ("Asgeir", "numberOfPlayers", "3");
+		Scenes.Load ("PlayerCustomization", "numberOfPlayers", "3");
 	}
 
 	public void ToMainSceneWith4Players() {
-		Scenes.Load ("Asgeir", "numberOfPlayers", "4");
+		Scenes.Load ("PlayerCustomization", "numberOfPlayers", "4");
 	}
 }
