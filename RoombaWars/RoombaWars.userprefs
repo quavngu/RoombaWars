@@ -1,7 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/BoardManager.cs">
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
+>>>>>>> f168d7e665e162f9dfc0519c9b670f37c054d1b1
     <Files>
+      <File FileName="Assets/Scripts/GameManager.cs" Line="11" Column="17" />
       <File FileName="Assets/Scripts/WeaponController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Crowd.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/RoombaMovement.cs" Line="1" Column="1" />
@@ -9,10 +14,15 @@
       <File FileName="Assets/Scripts/ObjectSpawnerController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/MineController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ExplosionController.cs" Line="1" Column="1" />
+<<<<<<< HEAD
       <File FileName="Assets/Scripts/OilController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/SpeedBoosterController.cs" Line="1" Column="1" />
       <File FileName="Assets/TimeTraveler.cs" Line="1" Column="1" />
       <File FileName="Assets/BoardManager.cs" Line="21" Column="3" />
+=======
+      <File FileName="Assets/Scripts/Scenes.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MainMenuController.cs" Line="1" Column="1" />
+>>>>>>> f168d7e665e162f9dfc0519c9b670f37c054d1b1
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

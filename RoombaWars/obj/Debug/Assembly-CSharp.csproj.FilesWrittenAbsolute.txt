@@ -19,3 +19,22 @@
 /Users/Asgeir/Documents/CGDD/RoombaWars/RoombaWars/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/Asgeir/Documents/CGDD/RoombaWars/RoombaWars/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/Asgeir/Documents/CGDD/RoombaWars/RoombaWars/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/obj/Debug/Assembly-CSharp.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/UnityEngine.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/UnityEditor.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/UnityEngine.PlaymodeTestsRunner.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/UnityEngine.HoloLens.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/UnityEngine.VR.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/Mono.Cecil.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/Unity.DataContract.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/quangnguyen/Documents/Skólinn/Vorönn 2017/Computer Game Design/RoombaWars/RoombaWars/Temp/bin/Debug/Mono.Cecil.Mdb.dll

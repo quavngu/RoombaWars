@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BoardManager.cs" />
-     <Compile Include="Assets\ControllProvider.cs" />
      <Compile Include="Assets\ControllsController.cs" />
      <Compile Include="Assets\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Crowd.cs" />
@@ -58,7 +57,9 @@
      <Compile Include="Assets\Scripts\MineController.cs" />
      <Compile Include="Assets\Scripts\ObjectSpawnerController.cs" />
      <Compile Include="Assets\Scripts\OilController.cs" />
+     <Compile Include="Assets\Scripts\PowerUpSpawner.cs" />
      <Compile Include="Assets\Scripts\RoombaMovement.cs" />
+     <Compile Include="Assets\Scripts\RotationScript.cs" />
      <Compile Include="Assets\Scripts\Scenes.cs" />
      <Compile Include="Assets\Scripts\SpeedBoosterController.cs" />
      <Compile Include="Assets\Scripts\WeaponController.cs" />
