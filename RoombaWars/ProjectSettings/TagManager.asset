@@ -12,6 +12,8 @@ TagManager:
   - Explosion
   - Mine
   - Oil
+  - Speed
+  - CannonBall
   layers:
   - Default
   - TransparentFX
