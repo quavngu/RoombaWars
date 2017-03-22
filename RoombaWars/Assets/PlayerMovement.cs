@@ -21,8 +21,12 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetKey (controlls[2])) {
 			this.transform.Rotate(new Vector3(0, rotationSpeed * Time.deltaTime, 0));
 		}
-			if (Input.GetKeyDown (controlls[1])) {
-			print ("Shoot");
+		if (Input.GetKeyDown (controlls[1])) {
+			if (GetComponentInChildren<PickUpController> ().powerUp != null) {
+				print (GetComponentInChildren<PickUpController> ().powerUp);
+				transform.parent.GetComponentInChildren<RoombaMovement> ().Spawn (GetComponentInChildren<PickUpController> ().powerUp);
+				GetComponentInChildren<PickUpController> ().powerUp = null;
+			}
 		}
 	}
 }

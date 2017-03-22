@@ -115,4 +115,12 @@ public class RoombaMovement : MonoBehaviour {
 	void GetDestroyed () {
 		Destroy (this.gameObject);
 	}
+
+	public void Spawn(GameObject powerUp) {
+		GameObject obj = Instantiate (powerUp);
+		obj.transform.parent = gameObject.transform;
+		obj.transform.position = gameObject.transform.position;
+		obj.transform.localPosition = new Vector3 (0, 0, -1.5f);
+		Destroy (obj, 10);
+	}
 }

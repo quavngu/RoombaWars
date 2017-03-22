@@ -15,6 +15,7 @@ TagManager:
   - Speed
   - CannonBall
   - ControllProvider
+  - PowerUp
   layers:
   - Default
   - TransparentFX
