@@ -42,9 +42,8 @@ public class PickUpController : MonoBehaviour {
 		print (other.gameObject.tag);
 		if (other.gameObject.CompareTag ("PowerUp")) {
 			powerUp = other.gameObject.GetComponent<PowerUpController> ().powerUp;
-			parentAudioSource.Play ();
+			//parentAudioSource.Play ();
 			powerUpText.text = other.name.Substring (0, other.name.Length - 7);
-
 			Destroy (other.gameObject);
 		}
 	}

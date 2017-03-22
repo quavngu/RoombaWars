@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c845176ef5f04f4e855b85e77372d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 1
+  scale: 1.81
 --- !u!114 &114727034671090298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -93,3 +93,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb0a2c9abc3e45df9e7cc22a1fcbcc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player3: {fileID: 0}
+  player4: {fileID: 0}
