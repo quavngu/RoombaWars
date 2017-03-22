@@ -7,11 +7,13 @@ public class PickUpController : MonoBehaviour {
 	public GameObject powerUp;
 
 	private PlayerMovement parent;
+	private AudioSource parentAudioSource;
 	private Text powerUpText;
 
 	// Use this for initialization
 	void Start () {
 		parent = gameObject.GetComponentInParent<PlayerMovement> ();
+		parentAudioSource = gameObject.GetComponentInParent<AudioSource> ();
 		if (parent.playerNum == 1) {
 			GameObject temp = GameObject.Find ("Player1PowerUp");
 			powerUpText = temp.GetComponent<Text> ();
@@ -40,7 +42,9 @@ public class PickUpController : MonoBehaviour {
 		print (other.gameObject.tag);
 		if (other.gameObject.CompareTag ("PowerUp")) {
 			powerUp = other.gameObject.GetComponent<PowerUpController> ().powerUp;
+			parentAudioSource.Play ();
 			powerUpText.text = other.name.Substring (0, other.name.Length - 7);
+
 			Destroy (other.gameObject);
 		}
 	}
