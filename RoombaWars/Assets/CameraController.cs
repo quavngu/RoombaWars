@@ -5,9 +5,11 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 	int intensity;
 	float height;
+	bool isShaking;
 
 	// Use this for initialization
 	void Start () {
+		isShaking = false;
 		height = this.transform.position.y;
 	}
 	
@@ -18,16 +20,23 @@ public class CameraController : MonoBehaviour {
 
 	public void Shake (float roughness) {
 		intensity = (int)roughness;
-		StartCoroutine (MoveCam (intensity));
-		this.transform.position = new Vector3 (Random.Range (0, intensity), height, Random.Range (0, intensity));
+		if (!isShaking) {
+			isShaking = true;
+			StartCoroutine (MoveCam (intensity));
+		}
 	}
 
 	private IEnumerator MoveCam(int intensity) {
+		print (intensity);
 		if (intensity > 0) {
-			this.transform.position = new Vector3 (Random.Range (0, intensity), height, Random.Range (0, intensity));
-			yield return new WaitForSeconds(0.5f);
-			StartCoroutine(MoveCam(intensity));
+			this.transform.position = new Vector3 (Random.Range (0, intensity/10f), height, Random.Range (0, intensity/10f));
+			yield return new WaitForSeconds (0.02f);
 			intensity--;
+			StartCoroutine (MoveCam (intensity));
+		} else {
+			this.transform.position = new Vector3 (0, height, 0);
+			isShaking = false;
+			yield return new WaitForSeconds (0f);;
 		}
 	}
 }

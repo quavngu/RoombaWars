@@ -14,6 +14,7 @@ public class RoombaMovement : MonoBehaviour {
 	Rigidbody rb;
 	Canvas canvas;
 	Slider slider;
+	CameraController cam;
 
 	float health;
 	float speed;
@@ -32,7 +33,8 @@ public class RoombaMovement : MonoBehaviour {
 		swingLeftDamage = weapon.swingLeftDamage;
 		swingRightDamage = weapon.swingRightDamage;
 		standardSpeed -= weapon.weight;
-		TakeDamage (0f);
+		cam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<CameraController> ();
+		slider.value = health;
 	}
 
 	// Update is called once per frame
@@ -105,6 +107,7 @@ public class RoombaMovement : MonoBehaviour {
 	}
 
 	public void TakeDamage(float damage) {
+		cam.Shake (damage);
 		health -= damage;
 		slider.value = health;
 		if (health <= 0) {
