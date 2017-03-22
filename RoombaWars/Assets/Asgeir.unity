@@ -343,6 +343,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23326891591013312, guid: d79377b7eeb984ce783442ed5e64744a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc1ad3adb0b064d3da232d91bba9ff11, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d79377b7eeb984ce783442ed5e64744a, type: 2}
   m_IsPrefabParent: 0
@@ -732,6 +737,7 @@ GameObject:
   - component: {fileID: 845513171}
   - component: {fileID: 845513170}
   - component: {fileID: 845513169}
+  - component: {fileID: 845513174}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -807,6 +813,17 @@ Transform:
   m_Father: {fileID: 318321185}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &845513174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 845513168}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f398546b6f0644014bef8ef8ca28ba03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &920266591 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4132475827638526, guid: 6bb8cd8372c1948a7ac23ae21c0c3312,
@@ -1049,11 +1066,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114417211556360416, guid: dd6c1e428bb0f4d01b51a128883ea16b,
-        type: 2}
-      propertyPath: spawnObj.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4983883328440204, guid: dd6c1e428bb0f4d01b51a128883ea16b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1086,18 +1098,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 114417211556360416, guid: dd6c1e428bb0f4d01b51a128883ea16b,
-        type: 2}
-      propertyPath: spawnObj.Array.data[4]
-      value: 
-      objectReference: {fileID: 1289212264337246, guid: 4d47128d52b2c4284b5bd4f5b5085ced,
-        type: 2}
-    - target: {fileID: 114417211556360416, guid: dd6c1e428bb0f4d01b51a128883ea16b,
-        type: 2}
-      propertyPath: spawnObj.Array.data[0]
-      value: 
-      objectReference: {fileID: 1289212264337246, guid: 4d47128d52b2c4284b5bd4f5b5085ced,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd6c1e428bb0f4d01b51a128883ea16b, type: 2}
   m_IsPrefabParent: 0
@@ -1442,7 +1442,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4053510903164086, guid: d79377b7eeb984ce783442ed5e64744a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 4053510903164086, guid: d79377b7eeb984ce783442ed5e64744a, type: 2}
       propertyPath: m_LocalPosition.z

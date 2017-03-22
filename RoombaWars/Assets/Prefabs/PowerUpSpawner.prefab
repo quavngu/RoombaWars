@@ -82,11 +82,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObj:
-  - {fileID: 1238409422454952, guid: 06a8ada47eec946488fc6ae1c9fd7a89, type: 2}
+  - {fileID: 1289212264337246, guid: 4d47128d52b2c4284b5bd4f5b5085ced, type: 2}
   - {fileID: 1615233064154416, guid: 491cb974fdaaf4b77aa06a02ea970b86, type: 2}
   - {fileID: 1145932611481812, guid: bf9cbd41d6bdc429799c028c63ae68fa, type: 2}
   - {fileID: 1008555359781050, guid: 0b37fefd0a69b454d9cfa2e5e00d2ff0, type: 2}
-  - {fileID: 1289212264337246, guid: 4d47128d52b2c4284b5bd4f5b5085ced, type: 2}
+  - {fileID: 1391366687300684, guid: d428a7847a79f4da2b2739e1f8d16aea, type: 2}
 --- !u!114 &114779973802067158
 MonoBehaviour:
   m_ObjectHideFlags: 1

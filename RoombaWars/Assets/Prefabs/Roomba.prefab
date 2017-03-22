@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 65448115196219868}
   - component: {fileID: 114830747508991488}
   m_Layer: 0
-  m_Name: Weapon_1
+  m_Name: Weapon
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dc1ad3adb0b064d3da232d91bba9ff11, type: 2}
+  - {fileID: 2100000, guid: 838a69a5fd37b45cdb93b109f15944e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

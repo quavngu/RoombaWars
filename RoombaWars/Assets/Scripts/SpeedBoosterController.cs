@@ -13,21 +13,22 @@ public class SpeedBoosterController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rm = GetComponentInParent<RoombaMovement> ();
+		rm.standardSpeed += speedBoost;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (!isActive && !isOnCoolDown) {
+		/*if (!isActive && !isOnCoolDown) {
 			isActive = true;
 			StartCoroutine (BoostSpeed ());
 		}
 		if (!isActive && isOnCoolDown) {
 			isActive = true;
 			StartCoroutine (CoolDown ());
-		}
+		}*/
 	}
 
-	private IEnumerator BoostSpeed() {
+	/*private IEnumerator BoostSpeed() {
 		rm.standardSpeed += speedBoost;
 		yield return new WaitForSeconds (duration);
 		rm.standardSpeed -= speedBoost;
@@ -39,5 +40,9 @@ public class SpeedBoosterController : MonoBehaviour {
 		yield return new WaitForSeconds (coolDown);
 		isOnCoolDown = false;
 		isActive = false;
+	}*/
+
+	void OnDestroy () {
+		rm.standardSpeed -= speedBoost;
 	}
 }
