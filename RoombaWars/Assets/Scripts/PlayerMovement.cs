@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour {
 				Vector3 oldScale = GetComponentInChildren<PickUpController> ().oldScale;
 				print (oldScale);
 				Destroy (GetComponentInChildren<PickUpController> ().powerUp);
-				obj.transform.position = new Vector3 (child.transform.position.x / 2f, -1f, child.transform.position.z / 2f);
+				obj.transform.position = new Vector3 (child.transform.position.x / 2f, -0.9f, child.transform.position.z / 2f);
 				obj.transform.localScale = oldScale;
 				obj.transform.localRotation = transform.localRotation;
 				obj.transform.Rotate(new Vector3(90,0,90));

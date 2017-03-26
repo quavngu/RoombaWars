@@ -16,6 +16,7 @@ TagManager:
   - CannonBall
   - ControllProvider
   - PowerUp
+  - EndScreen
   layers:
   - Default
   - TransparentFX

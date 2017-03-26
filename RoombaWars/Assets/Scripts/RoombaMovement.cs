@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class RoombaMovement : MonoBehaviour {
 	private float stabDamage;
-	private float swingRightDamage;
-	private float swingLeftDamage;
-	public float standardSpeed;
+	private float swingRightDamage  = 0;
+	private float swingLeftDamage = 0;
+	public float originalSpeed = 0;
 	public float fullHealth;
 	public int rotation;
 
@@ -18,10 +18,12 @@ public class RoombaMovement : MonoBehaviour {
 
 	float health;
 	float speed;
+	public float standardSpeed = 0;
 	bool isBacking;
 
 	// Use this for initialization
 	void Start () {
+		standardSpeed = originalSpeed;
 		health = fullHealth;
 		rotation = 0;
 		isBacking = false;
@@ -30,6 +32,7 @@ public class RoombaMovement : MonoBehaviour {
 		slider = GetComponentInChildren<Slider> ();
 		cam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<CameraController> ();
 		slider.value = health;
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ().AddRoomba (this.gameObject);
 	}
 
 	// Update is called once per frame
@@ -114,6 +117,7 @@ public class RoombaMovement : MonoBehaviour {
 	}
 
 	void GetDestroyed () {
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ().RemoveRoomba (this.gameObject);
 		Destroy (this.gameObject);
 	}
 
@@ -122,9 +126,11 @@ public class RoombaMovement : MonoBehaviour {
 		Destroy (powerUp);
 		obj.transform.position = gameObject.transform.position;
 		if (obj.gameObject.CompareTag ("Weapon")) {
-			if (gameObject.GetComponentInChildren<WeaponController> ()) {
-				standardSpeed += gameObject.GetComponentInChildren<WeaponController> ().weight;
-				Destroy (gameObject.GetComponentInChildren<WeaponController> ().gameObject);
+			if (gameObject.GetComponentsInChildren<WeaponController> () != null) {
+				foreach (WeaponController oldWeapon in gameObject.GetComponentsInChildren<WeaponController> ()) {
+					standardSpeed = originalSpeed;
+					Destroy (oldWeapon.gameObject);
+				}
 			}
 			obj.transform.parent = gameObject.transform;
 			obj.transform.localPosition = new Vector3 (0f, 0f, 0.5f);

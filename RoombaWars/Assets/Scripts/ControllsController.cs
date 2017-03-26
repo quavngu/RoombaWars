@@ -27,6 +27,16 @@ public class ControllsController : MonoBehaviour {
 			controlls [1] = KeyCode.UpArrow;
 			controlls [2] = KeyCode.RightArrow;
 		}
+		if (player == 3) {
+			controlls [0] = KeyCode.J;
+			controlls [1] = KeyCode.I;
+			controlls [2] = KeyCode.L;
+		}
+		if (player == 4) {
+			controlls [0] = KeyCode.Keypad1;
+			controlls [1] = KeyCode.Keypad5;
+			controlls [2] = KeyCode.Keypad3;
+		}
 		return controlls;
 	}
 }

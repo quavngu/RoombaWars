@@ -12,9 +12,9 @@ public class PlayerCustomizationManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if(Scenes.getParameter ("numberOfPlayers") != "")
+		if (Scenes.getParameter ("numberOfPlayers") != "") {
 			numberOfPlayers = int.Parse (Scenes.getParameter ("numberOfPlayers"));
-
+		}
 		NumberOfMenuPreparation ();
 	}
 	
