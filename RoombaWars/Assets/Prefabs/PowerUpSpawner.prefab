@@ -86,7 +86,16 @@ MonoBehaviour:
   - {fileID: 1615233064154416, guid: 491cb974fdaaf4b77aa06a02ea970b86, type: 2}
   - {fileID: 1145932611481812, guid: bf9cbd41d6bdc429799c028c63ae68fa, type: 2}
   - {fileID: 1008555359781050, guid: 0b37fefd0a69b454d9cfa2e5e00d2ff0, type: 2}
-  - {fileID: 1391366687300684, guid: d428a7847a79f4da2b2739e1f8d16aea, type: 2}
+  weapons:
+  - {fileID: 170842, guid: bb202b3efbde745e19f1cdd16c98daa8, type: 2}
+  - {fileID: 189872, guid: 4ee4e2abeb90341469af2c15c011fa6a, type: 2}
+  - {fileID: 187582, guid: 5404f7cd1c2b246d4ac681a9fd6661e0, type: 2}
+  - {fileID: 130840, guid: 09bf36de55ec040ea9094f759738e162, type: 2}
+  - {fileID: 131586, guid: 472d8a90adacd4cb99f0afb5f86b9df8, type: 2}
+  - {fileID: 160600, guid: fde20f7bc04f94b52a3ad1dbdd48c79e, type: 2}
+  - {fileID: 168316, guid: 0b04314144fda49ecafecfdc8c2ecd3b, type: 2}
+  - {fileID: 115418, guid: 13345985ed1de4273977256ded631e60, type: 2}
+  objLifeTime: 5
 --- !u!114 &114779973802067158
 MonoBehaviour:
   m_ObjectHideFlags: 1

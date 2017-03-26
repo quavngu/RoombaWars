@@ -28,11 +28,6 @@ public class RoombaMovement : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 		canvas = GetComponentInChildren<Canvas> ();
 		slider = GetComponentInChildren<Slider> ();
-		var weapon = GetComponentInChildren<WeaponController> ();
-		stabDamage = weapon.stabDamage;
-		swingLeftDamage = weapon.swingLeftDamage;
-		swingRightDamage = weapon.swingRightDamage;
-		standardSpeed -= weapon.weight;
 		cam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<CameraController> ();
 		slider.value = health;
 	}
@@ -79,18 +74,21 @@ public class RoombaMovement : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.CompareTag ("PowerUp")) {
+			Spawn (other.gameObject);
+		}
 		if (other.gameObject.CompareTag ("Roomba")) {
 			//He is rotating
 			if (rotation != 0 && !isBacking) {
 				if (rotation > 0) {
-					other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.swingRightDamage);
+					other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.swingRightDamage * this.standardSpeed);
 				} else {
-					other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.swingLeftDamage);
+					other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.swingLeftDamage * this.standardSpeed);
 				}
 			}
 			//He is not rotating
 			else {
-				other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.stabDamage);
+				other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.stabDamage * this.standardSpeed);
 			}
 		}
 		if (other.gameObject.CompareTag("Mine")) {
@@ -120,10 +118,25 @@ public class RoombaMovement : MonoBehaviour {
 	}
 
 	public void Spawn(GameObject powerUp) {
-		GameObject obj = Instantiate (powerUp);
-		obj.transform.parent = gameObject.transform;
+		GameObject obj = Instantiate (powerUp.GetComponent<PowerUpController>().powerUp);
+		Destroy (powerUp);
 		obj.transform.position = gameObject.transform.position;
-		obj.transform.localPosition = new Vector3 (0, 0, -1.5f);
-		Destroy (obj, 10);
+		if (obj.gameObject.CompareTag ("Weapon")) {
+			if (gameObject.GetComponentInChildren<WeaponController> ()) {
+				standardSpeed += gameObject.GetComponentInChildren<WeaponController> ().weight;
+				Destroy (gameObject.GetComponentInChildren<WeaponController> ().gameObject);
+			}
+			obj.transform.parent = gameObject.transform;
+			obj.transform.localPosition = new Vector3 (0f, 0f, 0.5f);
+			stabDamage = obj.GetComponent<WeaponController> ().stabDamage;
+			swingLeftDamage = obj.GetComponent<WeaponController> ().swingLeftDamage;
+			swingRightDamage = obj.GetComponent<WeaponController> ().swingRightDamage;
+			standardSpeed -= obj.GetComponent<WeaponController> ().weight;
+			obj.transform.localRotation = Quaternion.Euler(new Vector3 (90, 0, 0));
+		} else {
+			obj.transform.parent = gameObject.transform;
+			obj.transform.localPosition = new Vector3 (0, 0, -1.5f);
+			Destroy (obj, 10);
+		}
 	}
 }

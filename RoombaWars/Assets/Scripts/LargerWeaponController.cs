@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LargerWeaponController : MonoBehaviour {
-	GameObject weapon;
+	Transform weapon;
 	public float sizeBoost;
 
 	// Use this for initialization
 	void Start () {
-		weapon = transform.parent.FindChild ("Weapon").gameObject;
-		weapon.transform.localScale += new Vector3 (sizeBoost, sizeBoost, sizeBoost);
+		weapon = transform.parent.FindChild ("Weapon");
+		if (weapon != null) {
+			weapon.gameObject.transform.localScale += new Vector3 (sizeBoost, sizeBoost, sizeBoost);
+		}
 	}
 	
 	// Update is called once per frame
@@ -17,6 +19,8 @@ public class LargerWeaponController : MonoBehaviour {
 	}
 
 	void OnDestroy () {
-		weapon.transform.localScale -= new Vector3 (sizeBoost, sizeBoost, sizeBoost);
+		if (weapon != null) {
+			weapon.transform.localScale -= new Vector3 (sizeBoost, sizeBoost, sizeBoost);
+		}
 	}
 }
