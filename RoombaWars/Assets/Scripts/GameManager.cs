@@ -11,13 +11,16 @@ public class GameManager : MonoBehaviour {
 	private List<GameObject> roombas;
 	private GameObject[] endObjects;
 
+	void Awake () {
+		roombas = new List<GameObject>();
+	}
+
 	// Use this for initialization
 	void Start () {
 		endObjects = GameObject.FindGameObjectsWithTag ("EndScreen");
 		foreach (GameObject i in endObjects) {
 			i.SetActive(false);
 		}
-		roombas = new List<GameObject>();
 		if (Scenes.getParameter ("numberOfPlayers") != "") {
 			numberOfPlayers = int.Parse (Scenes.getParameter ("numberOfPlayers"));
 		}
@@ -31,6 +34,7 @@ public class GameManager : MonoBehaviour {
 			FinishScreen (roombas [0].name);
 		}
 		if (Input.GetKeyDown(KeyCode.R)) {
+			roombas = new List<GameObject>();
 			Scenes.Load ("Asgeir", "numberOfPlayers", numberOfPlayers.ToString());
 		}
 		if (Input.GetKeyDown(KeyCode.Escape)) {
@@ -53,6 +57,7 @@ public class GameManager : MonoBehaviour {
 
 	public void RemoveRoomba(GameObject roomba) {
 		roombas.Remove (roomba);
+		print (roombas.Count);
 	}
 
 	void FinishScreen (string name) {

@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PowerUpController.cs" />
      <Compile Include="Assets\Scripts\PowerUpSpawner.cs" />
+     <Compile Include="Assets\Scripts\RombaFollowMovement.cs" />
      <Compile Include="Assets\Scripts\RoombaMovement.cs" />
      <Compile Include="Assets\Scripts\RotationScript.cs" />
      <Compile Include="Assets\Scripts\Scenes.cs" />

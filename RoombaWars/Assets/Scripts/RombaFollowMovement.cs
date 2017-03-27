@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RoombaMovement : MonoBehaviour {
+public class RombaFollowMovement : MonoBehaviour {
 	private float stabDamage;
 	private float swingRightDamage  = 0;
 	private float swingLeftDamage = 0;
 	public float originalSpeed = 0;
 	public float fullHealth;
-	public int rotation;
+	public float rotation;
+	private GameObject owner;
 
 	Rigidbody rb;
 	Canvas canvas;
@@ -33,6 +34,7 @@ public class RoombaMovement : MonoBehaviour {
 		cam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<CameraController> ();
 		slider.value = health;
 		GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ().AddRoomba (this.gameObject);
+		owner = transform.parent.GetComponentInChildren<PlayerMovement> ().gameObject.GetComponentInChildren<PickUpController>().gameObject;
 	}
 
 	// Update is called once per frame
@@ -41,15 +43,12 @@ public class RoombaMovement : MonoBehaviour {
 		if (!isBacking) {
 			if (rotation != 0) {
 				speed = 0f;
-				if (rotation > 0) {
-					canvas.gameObject.transform.Rotate (0f, 0f, 50f * standardSpeed * Time.deltaTime);
-					rb.transform.Rotate (0f, 50f * standardSpeed * Time.deltaTime, 0f);
-					rotation -= 1;
-				} else if (rotation < 0) {
-					canvas.gameObject.transform.Rotate (0f, 0f, -50f * standardSpeed * Time.deltaTime);
-					rb.transform.Rotate (0f, -50f * standardSpeed * Time.deltaTime, 0f);
-					rotation += 1;
+				float toRotate = standardSpeed * Time.deltaTime * 50;
+				if (Mathf.Abs(toRotate) < Mathf.Abs(rotation)) {
+					print ("here");
+					toRotate = rotation;
 				}
+				RotateRoomba (toRotate);
 				return;
 			} else {
 				speed = standardSpeed;
@@ -61,8 +60,14 @@ public class RoombaMovement : MonoBehaviour {
 		}
 	}
 
+	void RotateRoomba(float deg) {
+		canvas.gameObject.transform.Rotate (0f, 0f, deg);
+		rb.transform.Rotate (0f, deg, 0f);
+		rotation -= deg;
+	}
+
 	void OnCollisionEnter(Collision collision) {
-		
+
 		if (!collision.collider.CompareTag("Ground")) {
 			MakeRotate ();
 		}
@@ -97,15 +102,17 @@ public class RoombaMovement : MonoBehaviour {
 		if (other.gameObject.CompareTag("Mine")) {
 			Destroy(other.gameObject);
 		}
-		else if (!other.gameObject.CompareTag("Fire") && !other.gameObject.CompareTag("Explosion") && !other.gameObject.CompareTag("Oil") && !other.gameObject.CompareTag("PowerUp")) {
-			print ("rotating");
+		else if (!other.gameObject.CompareTag("Fire") && !other.gameObject.CompareTag("Explosion") && !other.gameObject.CompareTag("Oil")) {
 			MakeRotate ();
 		}
 	}
 
 	void MakeRotate() {
-		StartCoroutine(Back());
-		rotation = Random.Range (-100, 100);
+		StartCoroutine (Back ());
+		Vector3 ownerPos = new Vector3 (owner.transform.position.x, 0, owner.transform.position.z);
+		Vector3 roombaPos = new Vector3 (transform.position.x, 0, transform.position.z);
+		rotation = Vector3.Angle (roombaPos, ownerPos);
+		print (rotation);
 	}
 
 	public void TakeDamage(float damage) {

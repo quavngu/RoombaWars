@@ -43,6 +43,6 @@ public class SpeedBoosterController : MonoBehaviour {
 	}*/
 
 	void OnDestroy () {
-		rm.standardSpeed -= speedBoost;
+		rm.standardSpeed = rm.originalSpeed;
 	}
 }
