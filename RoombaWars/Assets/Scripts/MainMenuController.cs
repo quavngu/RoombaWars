@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class MainMenuController : MonoBehaviour {
 	// Use this for initialization
+
+	private GameObject[] controlObjects;
+
 	void Start () {
-		
+		controlObjects = GameObject.FindGameObjectsWithTag ("ControlScreen");
+		foreach (GameObject i in controlObjects) {
+			i.SetActive(false);
+		}
 	}
 	
 	// Update is called once per frame
@@ -25,6 +31,18 @@ public class MainMenuController : MonoBehaviour {
 
 	public void ToMainSceneWith4Players() {
 		Scenes.Load ("Asgeir", "numberOfPlayers", "4");
+	}
+
+	public void EnterControls(){
+		foreach (GameObject i in controlObjects) {
+			i.SetActive(true);
+		}
+	}
+		
+	public void ExitControls(){
+		foreach (GameObject i in controlObjects) {
+			i.SetActive(false);
+		}
 	}
 
 	public void Quit() {

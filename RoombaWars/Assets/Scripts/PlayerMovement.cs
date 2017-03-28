@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour {
 				GameObject child = GetComponentInChildren<PickUpController> ().gameObject;
 				GameObject obj = Instantiate (GetComponentInChildren<PickUpController> ().powerUp);
 				Vector3 oldScale = GetComponentInChildren<PickUpController> ().oldScale;
-				print (oldScale);
 				Destroy (GetComponentInChildren<PickUpController> ().powerUp);
 				obj.transform.position = new Vector3 (child.transform.position.x / 2f, -0.9f, child.transform.position.z / 2f);
 				obj.transform.localScale = oldScale;

@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour {
 			numberOfPlayers = int.Parse (Scenes.getParameter ("numberOfPlayers"));
 		}
 		NumberOfPlayersPreparation ();
-		print ("Number of players: " + numberOfPlayers);
 	}
 
 	// Update is called once per frame
@@ -34,7 +33,7 @@ public class GameManager : MonoBehaviour {
 			FinishScreen (roombas [0].name);
 		}
 		if (Input.GetKeyDown(KeyCode.R)) {
-			roombas = new List<GameObject>();
+			roombas.Clear ();
 			Scenes.Load ("Asgeir", "numberOfPlayers", numberOfPlayers.ToString());
 		}
 		if (Input.GetKeyDown(KeyCode.Escape)) {
@@ -52,12 +51,12 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void AddRoomba(GameObject roomba) {
+		roomba.transform.localScale = new Vector3 (5 - (numberOfPlayers/2f), roomba.transform.localScale.y, 5 - (numberOfPlayers/2f));
 		roombas.Add (roomba);
 	}
 
 	public void RemoveRoomba(GameObject roomba) {
 		roombas.Remove (roomba);
-		print (roombas.Count);
 	}
 
 	void FinishScreen (string name) {

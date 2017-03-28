@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 370fbca758f7e424e8a6dcc67f34ba0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stabDamage: 2
-  swingRightDamage: 2
-  swingLeftDamage: 2
-  weight: 2
+  stabDamage: 0
+  swingRightDamage: 4
+  swingLeftDamage: 4
+  weight: 6

@@ -631,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 1
-  rotationSpeed: 30
+  rotationSpeed: 60
 --- !u!114 &114982710456189004
 MonoBehaviour:
   m_ObjectHideFlags: 1

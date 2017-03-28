@@ -106,6 +106,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stabDamage: 2
-  swingRightDamage: 2
-  swingLeftDamage: 2
+  swingRightDamage: 1
+  swingLeftDamage: 1
   weight: 2

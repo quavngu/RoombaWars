@@ -10,6 +10,7 @@ public class RoombaMovement : MonoBehaviour {
 	public float originalSpeed = 0;
 	public float fullHealth;
 	public int rotation;
+	public GameObject explosion;
 
 	Rigidbody rb;
 	Canvas canvas;
@@ -23,6 +24,8 @@ public class RoombaMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ().AddRoomba (this.gameObject);
+		originalSpeed = originalSpeed * transform.localScale.x;
 		standardSpeed = originalSpeed;
 		health = fullHealth;
 		rotation = 0;
@@ -32,7 +35,7 @@ public class RoombaMovement : MonoBehaviour {
 		slider = GetComponentInChildren<Slider> ();
 		cam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<CameraController> ();
 		slider.value = health;
-		GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ().AddRoomba (this.gameObject);
+
 	}
 
 	// Update is called once per frame
@@ -84,28 +87,30 @@ public class RoombaMovement : MonoBehaviour {
 			//He is rotating
 			if (rotation != 0 && !isBacking) {
 				if (rotation > 0) {
-					other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.swingRightDamage * this.standardSpeed);
+					other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.swingRightDamage * (this.standardSpeed/10));
 				} else {
-					other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.swingLeftDamage * this.standardSpeed);
+					other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.swingLeftDamage * (this.standardSpeed/10));
 				}
 			}
 			//He is not rotating
 			else {
-				other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.stabDamage * this.standardSpeed);
+				other.gameObject.GetComponent<RoombaMovement> ().TakeDamage (this.stabDamage * (this.standardSpeed/10));
 			}
 		}
 		if (other.gameObject.CompareTag("Mine")) {
 			Destroy(other.gameObject);
 		}
 		else if (!other.gameObject.CompareTag("Fire") && !other.gameObject.CompareTag("Explosion") && !other.gameObject.CompareTag("Oil") && !other.gameObject.CompareTag("PowerUp")) {
-			print ("rotating");
 			MakeRotate ();
+		}
+		if (other.gameObject.CompareTag ("BackSender")) {
+			rb.transform.position = new Vector3 (rb.transform.position.x * 0.9f, rb.transform.position.y * 0.9f, rb.transform.position.z * 0.9f);
 		}
 	}
 
 	void MakeRotate() {
 		StartCoroutine(Back());
-		rotation = Random.Range (-100, 100);
+		rotation = Random.Range (-10, 10);
 	}
 
 	public void TakeDamage(float damage) {
@@ -124,6 +129,7 @@ public class RoombaMovement : MonoBehaviour {
 
 	public void Spawn(GameObject powerUp) {
 		GameObject obj = Instantiate (powerUp.GetComponent<PowerUpController>().powerUp);
+		obj.transform.localScale.Scale (new Vector3(rb.transform.localScale.x, rb.transform.localScale.x, rb.transform.localScale.x));
 		Destroy (powerUp);
 		obj.transform.position = gameObject.transform.position;
 		if (obj.gameObject.CompareTag ("Weapon")) {
@@ -145,5 +151,11 @@ public class RoombaMovement : MonoBehaviour {
 			obj.transform.localPosition = new Vector3 (0, 0, -1.5f);
 			Destroy (obj, 10);
 		}
+	}
+
+	void OnDestroy () {
+		GameObject obj = Instantiate (explosion);
+		obj.transform.position = new Vector3 (this.transform.position.x, 0, this.transform.position.z);
+		Destroy (obj, 1);
 	}
 }

@@ -24,7 +24,6 @@ public class PlayerCustomizationManager : MonoBehaviour {
 	}
 
 	public void OnReadyButtonClick() {
-		print ("hi");
 	}
 
 	private void NumberOfMenuPreparation() {

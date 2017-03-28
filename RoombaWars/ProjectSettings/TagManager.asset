@@ -17,6 +17,9 @@ TagManager:
   - ControllProvider
   - PowerUp
   - EndScreen
+  - BackSender
+  - Scaler
+  - ControlScreen
   layers:
   - Default
   - TransparentFX
