@@ -52,6 +52,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObj: {fileID: 1090197161643930, guid: e45adcdc44a23465da62ac179a33d603, type: 2}
-  coolDown: 0.25
+  coolDown: 0.1
   objLifeTime: 4
   yPos: 0

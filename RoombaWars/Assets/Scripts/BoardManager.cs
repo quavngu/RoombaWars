@@ -18,8 +18,8 @@ public class BoardManager : MonoBehaviour {
 
 	IEnumerator Intro() {
 		// Show ready to roomble
-
 		yield return new WaitForSecondsRealtime(2f);
+		GameObject.FindGameObjectWithTag("StartText").SetActive(false);
 		Time.timeScale = 1;
 	}
 }

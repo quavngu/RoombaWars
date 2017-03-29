@@ -6,10 +6,15 @@ public class MainMenuController : MonoBehaviour {
 	// Use this for initialization
 
 	private GameObject[] controlObjects;
+	private GameObject[] gadgetObjects;
 
 	void Start () {
 		controlObjects = GameObject.FindGameObjectsWithTag ("ControlScreen");
 		foreach (GameObject i in controlObjects) {
+			i.SetActive(false);
+		}
+		gadgetObjects = GameObject.FindGameObjectsWithTag ("GadgetScreen");
+		foreach (GameObject i in gadgetObjects) {
 			i.SetActive(false);
 		}
 	}
@@ -41,6 +46,18 @@ public class MainMenuController : MonoBehaviour {
 		
 	public void ExitControls(){
 		foreach (GameObject i in controlObjects) {
+			i.SetActive(false);
+		}
+	}
+
+	public void EnterGadgets(){
+		foreach (GameObject i in gadgetObjects) {
+			i.SetActive(true);
+		}
+	}
+
+	public void Exitgadgets(){
+		foreach (GameObject i in gadgetObjects) {
 			i.SetActive(false);
 		}
 	}
