@@ -31,7 +31,7 @@ public class OilController : MonoBehaviour {
 	}
 
 	IEnumerator Ignite() {
-		yield return new WaitForSeconds (0.1f);
+		yield return new WaitForSeconds (0f);
 		GameObject obj = Instantiate (fire);
 		obj.transform.position = new Vector3 (this.transform.position.x, 0, this.transform.position.z);
 		Destroy (obj, 1);

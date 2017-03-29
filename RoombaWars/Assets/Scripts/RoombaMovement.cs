@@ -98,7 +98,7 @@ public class RoombaMovement : MonoBehaviour {
 			}
 		}
 		if (other.gameObject.CompareTag("Mine")) {
-			Destroy(other.gameObject);
+			other.gameObject.GetComponent<MineController> ().ExplodeNow ();
 		}
 		else if (!other.gameObject.CompareTag("Fire") && !other.gameObject.CompareTag("Explosion") && !other.gameObject.CompareTag("Oil") && !other.gameObject.CompareTag("PowerUp")) {
 			MakeRotate ();
@@ -124,7 +124,7 @@ public class RoombaMovement : MonoBehaviour {
 
 	void GetDestroyed () {
 		GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ().RemoveRoomba (this.gameObject);
-		Destroy (this.gameObject);
+		Die ();
 	}
 
 	public void Spawn(GameObject powerUp) {
@@ -153,9 +153,11 @@ public class RoombaMovement : MonoBehaviour {
 		}
 	}
 
-	void OnDestroy () {
+	public void Die () {
 		GameObject obj = Instantiate (explosion);
 		obj.transform.position = new Vector3 (this.transform.position.x, 0, this.transform.position.z);
 		Destroy (obj, 1);
+		Destroy (this.gameObject);
 	}
+
 }

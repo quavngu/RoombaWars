@@ -9,29 +9,11 @@ public class PickUpController : MonoBehaviour {
 
 	private PlayerMovement parent;
 	private AudioSource parentAudioSource;
-	private Text powerUpText;
 
 	// Use this for initialization
 	void Start () {
 		parent = gameObject.GetComponentInParent<PlayerMovement> ();
 		parentAudioSource = gameObject.GetComponentInParent<AudioSource> ();
-		if (parent.playerNum == 1) {
-			GameObject temp = GameObject.Find ("Player1PowerUp");
-			powerUpText = temp.GetComponent<Text> ();
-			powerUpText.text = "Player 1 power: ";
-		}else if (parent.playerNum == 2) {
-			GameObject temp = GameObject.Find ("Player2PowerUp");
-			powerUpText = temp.GetComponent<Text> ();
-			powerUpText.text = "Player 2 power: ";
-		}else if (parent.playerNum == 3) {
-			GameObject temp = GameObject.Find ("Player3PowerUp");
-			powerUpText = temp.GetComponent<Text> ();
-			powerUpText.text = "Player 3 power: ";
-		}else if (parent.playerNum == 4) {
-			GameObject temp = GameObject.Find ("Player4PowerUp");
-			powerUpText = temp.GetComponent<Text> ();
-			powerUpText.text = "Player 4 power: ";
-		}
 	}
 	
 	// Update is called once per frame
@@ -49,7 +31,6 @@ public class PickUpController : MonoBehaviour {
 			obj.transform.position = transform.position;
 			obj.transform.localPosition = new Vector3 (0.5f, 1f, 0f);
 			parentAudioSource.Play ();
-			powerUpText.text = other.name.Substring (0, other.name.Length - 7);
 			Destroy (other.gameObject);
 		}
 	}

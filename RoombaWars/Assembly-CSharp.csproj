@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\RoombaMovement.cs" />
      <Compile Include="Assets\Scripts\RotationScript.cs" />
      <Compile Include="Assets\Scripts\Scenes.cs" />
+     <Compile Include="Assets\Scripts\SledgeHammer.cs" />
      <Compile Include="Assets\Scripts\SpeedBoosterController.cs" />
      <Compile Include="Assets\Scripts\TimeTraveler.cs" />
      <Compile Include="Assets\Scripts\WeaponController.cs" />
